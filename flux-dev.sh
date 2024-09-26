@@ -7,8 +7,14 @@ pip install -r requirements.txt
 cd custom_nodes
 git clone https://github.com/ltdrdata/ComfyUI-Manager.git
 echo "Manager cloned"
+git clone https://github.com/city96/ComfyUI-GGUF
+pip install --upgrade gguf
+echo "GGUF installed"
 cd ..
-cd models/checkpoints
-wget "https://huggingface.co/lllyasviel/flux1-dev-bnb-nf4/resolve/main/flux1-dev-bnb-nf4-v2.safetensors?download=true" -O flux1-dev-bnb-nf4-v2.safetensors
+cd models/unet
+wget "https://huggingface.co/city96/FLUX.1-dev-gguf/resolve/main/flux1-dev-Q4_1.gguf" -O flux1-dev-Q4_1.gguf
+cd ..
+cd clip
+wget "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q4_K_M.gguf" -O t5-v1_1-xxl-encoder-Q4_K_M.gguf
 cd ../..
 python main.py --listen
