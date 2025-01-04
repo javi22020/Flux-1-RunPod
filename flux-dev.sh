@@ -16,5 +16,6 @@ wget "https://huggingface.co/city96/FLUX.1-dev-gguf/resolve/main/flux1-dev-Q4_1.
 cd ..
 cd clip
 wget "https://huggingface.co/city96/t5-v1_1-xxl-encoder-gguf/resolve/main/t5-v1_1-xxl-encoder-Q4_K_M.gguf" -O t5-v1_1-xxl-encoder-Q4_K_M.gguf
+wget "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors" -O clip_l.safetensors
 cd ../..
 python main.py --listen
